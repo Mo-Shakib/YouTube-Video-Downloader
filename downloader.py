@@ -12,7 +12,7 @@ print('       _________ ____              ____    ____ ___.    \n'
 '             \/      \/        \/       \/           \/ \n')
 print ("[+] About script:")
 print ("[-] With this script, you can download youtube videos by entering video url.")
-print ("[-] Version: 2.0.0")
+print ("[-] Version: 2.0.8")
 print ("-------------------")
 print ("[+] THIS SCRIPT CODDED BY SHAKIB") 
 print ("[-] SITE: www.code-shakib.github.io") 
@@ -31,9 +31,11 @@ try:
     yt = pytube.YouTube(url, on_progress_callback = on_progress)
     print(f'[+] Downloading: {yt.title} ')
     video = yt.streams.get_by_itag(22)
-    video.download('D:/Downloads/YouTube Videos')
+    # add custom download folder here
+    video.download()
     print(f'[#] Completed ')
+    print('\n-----------Task Completed!---------------')
 except:  
     print("Some Error!")
+    print('\n-----------Unccessful!---------------')
 
-print('\n-----------Task Completed!---------------')
